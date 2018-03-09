@@ -35,9 +35,11 @@ myApp.controller("MainController",["$scope","$http","$interval",
 	var startCountdown=function(){
 		countdownInterval=$interval(decrementCountDown,1000,$scope.countdown)
 	}
-	$scope.username="angular"
+	$scope.username="";
 	$scope.countdown=5;
+	if($scope.username!=""){
 	startCountdown();
+    }
 	//$scope.repoSort="-name";
 	// $http.get($scope.username).then(onUserComplete,onError);
 }])

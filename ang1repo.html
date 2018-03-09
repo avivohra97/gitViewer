@@ -1,10 +1,14 @@
 <ul ng-repeat="contributor in contributors">
   <li>
-  	<div>
-  		<img ng-src="{{contributor.avatar_url}}">
-  		<h3>contributions:{{contributor.contributions}}</h3>
+  	<div class="img-thumbnail">
+  		<img  ng-src="{{contributor.avatar_url}}">
+  		<h6>{{contributor.login}}</h6>
+  		Link to {{contributo.login}}
+  		<a href="/user/{{contributor.login}}">{{contributor.login}}</a>
+  		<p>contributions:{{contributor.contributions}}<br></p>
   	</div>
   	
   </li>
 </ul>
-<a href="#/main">back to search</a>
+<a class="anchor" href="/user/{{owner.login}}">back to repos</a>
+<a class="anchor" href="/main">back to search</a>

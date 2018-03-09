@@ -11,7 +11,8 @@ myApp.controller("UserController",["$scope","$http","$interval",
 	// .then(onUserComplete,onError);
 	};
 	var onError=function(reason){
-		$scope.error="could not fetch the user";
+		$scope.show=false;
+		$scope.error="could not fetch the user "+$scope.username;
 	}
 	var onRepos=function(response){
 	    $scope.repos=response.data;
@@ -19,6 +20,7 @@ myApp.controller("UserController",["$scope","$http","$interval",
 	    $location.hash("userDetails")
 	    $anchorScroll();
 	}
+	$scope.show=true;
 	$scope.username=$routeParams.username;
 	$scope.repoSort="-name";
 	// $http.get($scope.username).then(onUserComplete,onError);

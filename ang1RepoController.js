@@ -4,6 +4,7 @@ myApp.controller("RepoController",["$scope","$http","$interval",
 	$scope.message="hello";
 	var onUserComplete=function(response){
 		$scope.user=response.data;
+		$scope.owner=$scope.user.owner;
 		console.log($scope.user)
 		$http.get($scope.user.contributors_url)
 		.then(onContributor,onError);

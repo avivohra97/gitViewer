@@ -4,17 +4,66 @@
   <head>
   	<base href='/'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
-   <!--  // <script type="text/javascript" src="lib\angular.route.min.js"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="gitStyle.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
     <script type="text/javascript" src="ang1App.js"></script>
     <script type="text/javascript" src="ang1RepoController.js"></script>
     <script type="text/javascript" src="ang1UserController.js"></script>
     <script src="ang1.js"></script>
+    <style type="text/css">
+       input[type="search"]{
+        padding:.375rem .75rem;
+        border-radius:.25rem;
+        }
+        input[type="submit"]{
+          color: #fff;
+          background-color: #6c757d;
+          border-color: #6c757d;
+          border-radius: 0.2em;
+        } 
+        h1{
+          /*text-align: center;*/
+          margin: 1% 43%;
+        }
+        img{
+          height: 200px;
+          width: 200px;
+        }
+        h1+img{
+          margin: 1% 43%;
+          height: 200px;
+          width: 200px;
+        }
+        .con{
+          margin: 1% 35%;
+        }
+        .navbar-brand{
+          font-size: 24px;
+          margin-left: 45%;
+        }
+        .position{
+          z-index: 1;
+           position: relative;
+           text-align: center;
+           padding-top: 50vh;
+        }
+        .back{
+          margin: 0 45%;
+        }
+        .anchor{
+          border:2px solid #5BB0F9;
+          background-color:#E9EBEC;
+          border-radius:10%;
+          margin: 2px;
+        }
+    </style>
   </head>
 
-  <body>
-  	<h1>Git Viewer</h1>
+  <body style="background-color:white;">
+    <nav class="navbar navbar-light bg-inverse" style="background-color:#b1b2b5">
+      <a class="navbar-brand" href="/main">GithubViewer</a>
+    </nav>
   	<div ng-view></div>
   </body>
 

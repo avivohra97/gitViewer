@@ -1,32 +1,39 @@
-    <div>
-      <h2>{{username}}</h2>
-      {{error}}
-      <img ng-src="{{user.avatar_url}}">
-    </div>
-    order:
-    <select ng-model="repoSort">
-    	<option value="+name">name</option>
-    	<option value="-stargrazer">star</option>
-    	<option value="+language">lang</option>
-    </select>
-    <table>
-       <thead>
-         <tr>
-           <th>Name</th>
-           <th>star</th>
-           <th>language</th>
-         </tr>
-       </thead>
-       <tbody>
-           <tr ng-repeat="repo in repos|orderBy:repoSort">
-              <td>
-                <a href="#/repos/{{user.login}}/{{repo.name}}">
-                {{repo.name}}
-              </a>
-              </td>
-              <td>{{repo.stargrazers_count|number}}</td>
-              <td>{{repo.language}}</td>
-           </tr>
-       </tbody>
-    </table>
+      <div ng-hide="show" class="alert alert-danger" role="alert">
+       {{error}} <a href="/main" class="alert-link">Search again </a>.with right username
+      </div>
+  <div ng-show='show'>
+    <h1>{{user.login}}</h1>
+    <img class="img-thumbnail"ng-src="{{user.avatar_url}}">
+    <div class='con'>
+         <div>
+           <h4 class="d-inline">Order By:</h4>
+           <select class="d-inline" ng-model="repoSort">
+            <option value="+name" selected>name</option>
+            <option value="-name" >name in reverse</option>
+            <option value="-language">language in reverse</option>
+            <option value="+language">language</option>
+           </select>
+         </div>
+         
+         <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>language</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="repo in repos|orderBy:repoSort">
+                   <td>
+                     <a href="/repos/{{user.login}}/{{repo.name}}">
+                     {{repo.name}}
+                   </a>
+                   </td>
+                   <td>{{repo.language}}</td>
+                </tr>
+            </tbody>
+         </table>
+       </div>
+     </div>
+    <a class="anchor"class="back"href="/main">go to search</a>
   <!--   /repos/{{user.login}}/{{repo.name}} -->

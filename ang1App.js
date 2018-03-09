@@ -1,5 +1,5 @@
 	var myApp=angular.module("myApp",["ngRoute"]);
-	myApp.config(["$routeProvider",function($routeProvider){
+	myApp.config(["$routeProvider","$locationProvider",function($routeProvider,$locationProvider){
 		$routeProvider
 		.when("/main",{
 			templateUrl:"ang1main.html",
@@ -13,5 +13,6 @@
 			templateUrl:"ang1repo.html",
 			controller:"RepoController"
 		})
-		.otherwise({redirectTo:"/main"})
+		.otherwise({redirectTo:"/main"});
+		$locationProvider.html5Mode(true);
 	}])
