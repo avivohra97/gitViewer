@@ -1,6 +1,6 @@
 var myApp=angular.module("myApp");
 myApp.controller("UserController",["$scope","$http","$interval",
-	"$location","$anchorScroll","$routeParams",function($scope,$http,$interval,$location,$anchorScroll,$routeParams){
+	"$location","$anchorScroll","$stateParams",function($scope,$http,$interval,$location,$anchorScroll,$stateParams){
 	$scope.message="hello";
 	var onUserComplete=function(response){
 		$scope.user=response.data;
@@ -21,7 +21,7 @@ myApp.controller("UserController",["$scope","$http","$interval",
 	    $anchorScroll();
 	}
 	$scope.show=true;
-	$scope.username=$routeParams.username;
+	$scope.username=$stateParams.username;
 	$scope.repoSort="-name";
 	// $http.get($scope.username).then(onUserComplete,onError);
 	$http.get("https://api.github.com/users/"+$scope.username)

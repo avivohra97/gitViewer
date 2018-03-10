@@ -4,6 +4,7 @@
   <head>
   	<base href='/'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="gitStyle.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
@@ -50,6 +51,9 @@
         }
         .back{
           margin: 0 45%;
+          border:2px solid #5BB0F9;
+          background-color:#E9EBEC;
+          border-radius:10%;
         }
         .anchor{
           border:2px solid #5BB0F9;
@@ -64,7 +68,7 @@
     <nav class="navbar navbar-light bg-inverse" style="background-color:#b1b2b5">
       <a class="navbar-brand" href="/main">GithubViewer</a>
     </nav>
-  	<div ng-view></div>
+  	<div ui-view></div>
   </body>
 
 </html>

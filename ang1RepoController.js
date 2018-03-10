@@ -1,6 +1,6 @@
 var myApp=angular.module("myApp");
 myApp.controller("RepoController",["$scope","$http","$interval",
-	"$location","$anchorScroll","$routeParams",function($scope,$http,$interval,$location,$anchorScroll,$routeParams){
+	"$location","$anchorScroll","$stateParams",function($scope,$http,$interval,$location,$anchorScroll,$stateParams){
 	$scope.message="hello";
 	var onUserComplete=function(response){
 		$scope.user=response.data;
@@ -17,8 +17,8 @@ myApp.controller("RepoController",["$scope","$http","$interval",
 	var onContributor=function(response){
 	    $scope.contributors=response.data;
 	}
-	$scope.username=$routeParams.username;
-	$scope.reponame=$routeParams.reponame;
+	$scope.username=$stateParams.username;
+	$scope.reponame=$stateParams.reponame;
 	// $http.get($scope.username).then(onUserComplete,onError);
 	$http.get("https://api.github.com/repos/"+$scope.username+"/"+$scope.reponame)
 	.then(onUserComplete,onError);
